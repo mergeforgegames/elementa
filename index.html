@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<!-- ==========================================================================
+     SEO temelleri.
+
+     Basligin ilk kelimeleri en cok aranacak olanlar: "periyodik tablo oyunu".
+     Marka adi sona birakildi, cunku "Elementa"yi henuz kimse aramiyor —
+     once ne oldugunu arayanlar bulmali, marka sonra oturur.
+     ======================================================================= -->
+<title>Periyodik Tablo Oyunu — Element Birleştir, Silah Yap | Elementa</title>
+<meta name="description" content="Elementa: elementleri birleştirip H₂O, HF, H₂SO₄ gibi bileşiklerden silah yap, şehir arenalarında dalgalara karşı hayatta kal. Türkçe, çevrimdışı, ücretsiz Android oyunu.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://mergeforgegames.github.io/elementa/">
+<meta name="theme-color" content="#05060d">
+<meta name="robots" content="index,follow,max-image-preview:large">
+
+<!-- Paylasim kartlari: baglanti WhatsApp'ta ya da Instagram'da paylasildiginda
+     gorunen sey budur. Gorsel olmazsa duz bir baglanti gorunur. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Elementa">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:title" content="Elementa — Periyodik tablodan silah yap">
+<meta property="og:description" content="Elementleri birleştir, gerçek kimyadan silah üret, şehir arenalarında hayatta kal. Türkçe ve çevrimdışı.">
+<meta property="og:url" content="https://mergeforgegames.github.io/elementa/">
+<meta property="og:image" content="https://mergeforgegames.github.io/elementa/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Arama motoruna "bu bir Android oyunu" demenin makine okunur yolu.
+     Puan/yorum alanlari BILEREK bos: uygulama henuz yayinlanmadi ve
+     olmayan bir puani yazmak hem yanlis hem de yaptirim sebebi. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Elementa: Element Savunması",
+  "applicationCategory": "GameApplication",
+  "applicationSubCategory": "Arcade",
+  "operatingSystem": "Android 7.0+",
+  "inLanguage": "tr",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "TRY" },
+  "author": {
+    "@type": "Organization",
+    "name": "MergeForge Games",
+    "url": "https://mergeforgegames.github.io/elementa/",
+    "sameAs": [
+      "https://www.instagram.com/mergeforgegames/",
+      "https://github.com/mergeforgegames"
+    ]
+  },
+  "downloadUrl": "https://play.google.com/store/apps/details?id=com.mergeforgegames.elementa",
+  "description": "Elementleri birleştirip gerçek kimyasal bileşiklerden silah üretilen, şehir arenalarında geçen Türkçe hayatta kalma oyunu."
+}
+</script>
+
+<style>
+  :root{
+    --zemin:#05060d; --kart:#0d1226; --kart2:#080b18;
+    --metin:#eaf0ff; --soluk:#8590a8;
+    --mavi:#4ee0ff; --mor:#c04dff; --yesil:#3ee08f;
+    --cizgi:rgba(255,255,255,.09);
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--zemin); color:var(--metin);
+    font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--mavi)}
+  .kap{max-width:980px; margin:0 auto; padding:0 20px}
+
+  /* --- ust --- */
+  header{padding:18px 0; border-bottom:1px solid var(--cizgi)}
+  .ustbar{display:flex; align-items:center; gap:12px}
+  .rozet{
+    width:38px;height:38px;border-radius:11px;display:grid;place-items:center;
+    background:linear-gradient(145deg,#4ee0ff,#c04dff); color:#05060d;
+    font-weight:800; font-size:16px; letter-spacing:-.02em;
+  }
+  .ustbar b{font-size:17px; letter-spacing:.01em}
+  .ustbar span{color:var(--soluk); font-size:13px}
+
+  /* --- kahraman --- */
+  .kahraman{padding:56px 0 44px; text-align:center;
+    background:radial-gradient(70% 120% at 50% -10%, rgba(78,224,255,.14), transparent 62%)}
+  h1{font-size:clamp(28px,5.4vw,46px); line-height:1.15; margin:0 0 14px; letter-spacing:-.02em}
+  .vurgu{background:linear-gradient(90deg,var(--mavi),var(--mor));
+    -webkit-background-clip:text; background-clip:text; color:transparent}
+  .alt{font-size:clamp(16px,2.3vw,19px); color:var(--soluk); max-width:620px; margin:0 auto 26px}
+  .indir{
+    display:inline-flex; align-items:center; gap:10px;
+    background:linear-gradient(135deg,#4ee0ff,#7b8cff); color:#04121a;
+    font-weight:800; font-size:16px; text-decoration:none;
+    padding:14px 26px; border-radius:14px;
+  }
+  .indir:hover{filter:brightness(1.08)}
+  .not{margin-top:12px; font-size:13.5px; color:var(--soluk)}
+
+  /* --- bolumler --- */
+  section{padding:44px 0; border-top:1px solid var(--cizgi)}
+  h2{font-size:clamp(20px,3.2vw,27px); margin:0 0 8px; letter-spacing:-.01em}
+  .giris{color:var(--soluk); margin:0 0 24px; max-width:640px}
+  .izgara{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px}
+  .kart{background:linear-gradient(180deg,var(--kart),var(--kart2));
+    border:1px solid var(--cizgi); border-radius:16px; padding:18px 18px 16px}
+  .kart h3{margin:0 0 6px; font-size:16.5px}
+  .kart p{margin:0; color:var(--soluk); font-size:14.5px}
+  .sim{font-size:22px; display:block; margin-bottom:8px}
+
+  ol.adim{counter-reset:a; list-style:none; padding:0; margin:0; display:grid; gap:12px}
+  ol.adim li{counter-increment:a; display:flex; gap:14px; align-items:flex-start}
+  ol.adim li::before{
+    content:counter(a); flex:none; width:30px;height:30px;border-radius:9px;
+    display:grid;place-items:center; background:rgba(78,224,255,.14);
+    color:var(--mavi); font-weight:800; font-size:14px;
+  }
+  ol.adim b{display:block}
+  ol.adim span{color:var(--soluk); font-size:14.5px}
+
+  details{border:1px solid var(--cizgi); border-radius:13px; padding:14px 16px; margin-bottom:10px;
+    background:var(--kart2)}
+  details summary{cursor:pointer; font-weight:650; list-style:none}
+  details summary::-webkit-details-marker{display:none}
+  details summary::after{content:'+'; float:right; color:var(--soluk)}
+  details[open] summary::after{content:'–'}
+  details p{color:var(--soluk); margin:10px 0 0; font-size:14.5px}
+
+  footer{padding:30px 0 50px; color:var(--soluk); font-size:13.5px; border-top:1px solid var(--cizgi)}
+  footer a{color:var(--soluk)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="kap ustbar">
+    <div class="rozet">Ea</div>
+    <div>
+      <b>Elementa</b><br>
+      <span>MergeForge Games</span>
+    </div>
+  </div>
+</header>
+
+<div class="kahraman">
+  <div class="kap">
+    <h1>Periyodik tablodan <span class="vurgu">silah yap</span>,<br>arenada hayatta kal</h1>
+    <p class="alt">Elementleri birleştirip gerçek kimyasal bileşikler üret. Her bileşik kendi
+       özelliğine göre savaşır: asit zemine sızar, hidroflorik asit zırhı deler,
+       amonyum nitrat yere mayın bırakır.</p>
+    <a class="indir" href="https://play.google.com/store/apps/details?id=com.mergeforgegames.elementa">
+      Google Play'den indir
+    </a>
+    <p class="not">Ücretsiz · Türkçe · Çevrimdışı oynanır · Android 7.0 ve üzeri</p>
+  </div>
+</div>
+
+<section>
+  <div class="kap">
+    <h2>Nasıl oynanır?</h2>
+    <p class="giris">Üç şeyi öğrenince oyunun tamamı açılıyor.</p>
+    <ol class="adim">
+      <li><div><b>Element topla</b><span>Düşmanlar öldüğünde element bırakır. Aynı iki elementi
+        yan yana koy, birleşip bir üst elemente çıksınlar.</span></div></li>
+      <li><div><b>Bileşik kur</b><span>Tezgâhta elementlerini harcayıp silah yap. H₂O iter,
+        HF zırh tanımaz, H₂SO₄ zırhı soyar ve yakmaya devam eder.</span></div></li>
+      <li><div><b>Dalgaları geç</b><span>Her beş dalgada bir patron gelir. Hepsinin ayrı bir
+        hamlesi var: üstüne yüklenen, üstüne atlayan, buz püskürten, meteor yağdıran.</span></div></li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="kap">
+    <h2>Oyunda ne var?</h2>
+    <p class="giris">Kimya bir tema değil, oynanışın kendisi.</p>
+    <div class="izgara">
+      <div class="kart"><span class="sim">⚗️</span>
+        <h3>118 element, 47 bileşik</h3>
+        <p>Keşiflerin koşular arasında kalıcı. Her koşu bir öncekinin üstüne biner.</p></div>
+      <div class="kart"><span class="sim">🏙️</span>
+        <h3>Şehir arenaları</h3>
+        <p>Ara sokak, ana cadde, metro peronu, liman, park ve çatı katı. Arabalar,
+           konteynerler ve binalar siper oluyor.</p></div>
+      <div class="kart"><span class="sim">👁️</span>
+        <h3>Altı patron, altı ayrı dövüş</h3>
+        <p>Ağır Çekirdek yüklenir, Avcı üstüne atlar, Zincir Çekirdek buz püskürtür,
+           Erimiş Yürek meteor yağdırır, Prizma kristal patlatır, Boşluk Gözü çekim
+           alanları kurar.</p></div>
+      <div class="kart"><span class="sim">📶</span>
+        <h3>İnternetsiz oynanır</h3>
+        <p>Oyun tamamen cihazında çalışır. Hesap açmana gerek yok, ilerlemen telefonunda kalır.</p></div>
+      <div class="kart"><span class="sim">🇹🇷</span>
+        <h3>Baştan sona Türkçe</h3>
+        <p>Menüler, element adları, bileşik açıklamaları ve görevler Türkçe yazıldı.</p></div>
+      <div class="kart"><span class="sim">🎮</span>
+        <h3>Tek parmakla</h3>
+        <p>Ekrana basılı tutup sürükle. Silahların en yakın düşmanı kendisi vuruyor.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="kap">
+    <h2>Sık sorulanlar</h2>
+    <p class="giris">Oyunla ilgili en çok merak edilenler.</p>
+
+    <details><summary>Elementa ücretsiz mi?</summary>
+      <p>Evet. Oyun ücretsiz ve uygulama içi satın alma yok. Gelir yalnızca reklamlardan
+         sağlanıyor.</p></details>
+
+    <details><summary>İnternet olmadan oynanır mı?</summary>
+      <p>Oynanır. Oyunun tamamı cihazında çalışır; internet yalnızca reklamların
+         yüklenmesi için kullanılır.</p></details>
+
+    <details><summary>Hangi telefonlarda çalışıyor?</summary>
+      <p>Android 7.0 ve üzeri tüm telefonlarda. İndirme boyutu yaklaşık 7 MB.</p></details>
+
+    <details><summary>Gerçekten kimya öğretiyor mu?</summary>
+      <p>Bileşikler gerçek: H₂O, HF, H₂SO₄, NH₄NO₃ ve diğerleri doğru element
+         oranlarıyla kuruluyor ve oyundaki etkileri gerçek özelliklerinden geliyor.
+         Bir ders kitabı değil ama periyodik tabloyu tanıtıyor.</p></details>
+
+    <details><summary>Verilerim toplanıyor mu?</summary>
+      <p>Oyun ilerlemen yalnızca kendi cihazında saklanıyor. Reklamlar için Google
+         AdMob cihazının reklam kimliğini işliyor; ayrıntısı
+         <a href="https://sites.google.com/view/mergeforgegames">gizlilik politikasında</a>.</p></details>
+  </div>
+</section>
+
+<!-- FAQ'in makine okunur kopyasi: Google bunu arama sonucunda acilir-kapanir
+     kutular olarak gosterebiliyor. Metinler yukaridakiyle AYNI olmali. -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"FAQPage","inLanguage":"tr",
+  "mainEntity":[
+    {"@type":"Question","name":"Elementa ücretsiz mi?","acceptedAnswer":{"@type":"Answer","text":"Evet. Oyun ücretsiz ve uygulama içi satın alma yok. Gelir yalnızca reklamlardan sağlanıyor."}},
+    {"@type":"Question","name":"İnternet olmadan oynanır mı?","acceptedAnswer":{"@type":"Answer","text":"Oynanır. Oyunun tamamı cihazında çalışır; internet yalnızca reklamların yüklenmesi için kullanılır."}},
+    {"@type":"Question","name":"Hangi telefonlarda çalışıyor?","acceptedAnswer":{"@type":"Answer","text":"Android 7.0 ve üzeri tüm telefonlarda. İndirme boyutu yaklaşık 7 MB."}},
+    {"@type":"Question","name":"Gerçekten kimya öğretiyor mu?","acceptedAnswer":{"@type":"Answer","text":"Bileşikler gerçek: H2O, HF, H2SO4, NH4NO3 ve diğerleri doğru element oranlarıyla kuruluyor ve oyundaki etkileri gerçek özelliklerinden geliyor."}},
+    {"@type":"Question","name":"Verilerim toplanıyor mu?","acceptedAnswer":{"@type":"Answer","text":"Oyun ilerlemen yalnızca kendi cihazında saklanıyor. Reklamlar için Google AdMob cihazının reklam kimliğini işliyor."}}
+  ]
+}
+</script>
+
+<footer>
+  <div class="kap">
+    <p><b>MergeForge Games</b> · <a href="mailto:mergeforgegames@gmail.com">mergeforgegames@gmail.com</a></p>
+    <p><a href="https://sites.google.com/view/mergeforgegames">Gizlilik politikası</a> ·
+       <a href="https://play.google.com/store/apps/details?id=com.mergeforgegames.elementa">Google Play</a> ·
+       <a href="https://www.instagram.com/mergeforgegames/" rel="me">Instagram</a> ·
+       <a href="https://github.com/mergeforgegames" rel="me">GitHub</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

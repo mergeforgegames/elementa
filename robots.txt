@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mergeforgegames.github.io/elementa/sitemap.xml
